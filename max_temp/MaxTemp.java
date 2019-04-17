@@ -35,6 +35,7 @@ public class MaxTemp {
 		FileOutputFormat.setOutputPath(job, new Path(args[1]));
 		
 		job.setMapperClass(MaxTempMapper.class);
+		job.setCombinerClass(MaxTempReducer.class);
 		job.setReducerClass(MaxTempReducer.class);
 		
 		job.setOutputKeyClass(Text.class);
